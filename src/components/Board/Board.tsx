@@ -3,7 +3,7 @@ import Cell from "./components/Cell";
 
 const Board: FC = () => {
   return (
-    <table>
+    <table className="border">
       <tbody>
         {Array.from({ length: 5 }).map((_, row) => (
           <tr key={row}>

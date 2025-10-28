@@ -5,14 +5,26 @@ import Robot from "./components/Robot";
 
 const App: FC = () => {
   return (
-    <div>
-      <Board />
-      <Robot x={0} y={0} facing="NORTH" />
-      <div>
-        <Button>New Game</Button>
-        <Button>Left</Button>
-        <Button>Right</Button>
-        <Button>Move</Button>
+    <div className="h-dvh flex items-center justify-center">
+      <div className="flex gap-12">
+        <div>
+          <Board />
+          <Robot x={0} y={0} facing="WEST" />
+        </div>
+        <div className="space-y-8">
+          <div>
+            <Button>New Game</Button>
+          </div>
+          <div>
+            <Button>Left</Button>
+          </div>
+          <div>
+            <Button>Right</Button>
+          </div>
+          <div>
+            <Button>Move</Button>
+          </div>
+        </div>
       </div>
     </div>
   );

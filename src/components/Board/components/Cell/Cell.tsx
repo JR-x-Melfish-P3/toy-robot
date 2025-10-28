@@ -1,7 +1,8 @@
 import type { FC } from "react";
+import Placeholder from "../../../Placeholder";
 
 const Cell: FC = () => {
-  return <div>Cell Component</div>;
+  return <Placeholder className="border" />;
 };
 
 export default Cell;
