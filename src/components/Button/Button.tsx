@@ -1,7 +1,7 @@
-import type { FC, PropsWithChildren } from "react";
+import type { ComponentProps, FC } from "react";
 
-const Button: FC<PropsWithChildren> = ({ children }) => {
-  return <button>{children}</button>;
+const Button: FC<ComponentProps<"button">> = ({ ...rest }) => {
+  return <button {...rest} />;
 };
 
 export default Button;
