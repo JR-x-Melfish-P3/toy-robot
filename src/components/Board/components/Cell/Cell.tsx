@@ -1,8 +1,10 @@
-import type { FC } from "react";
+import type { ComponentProps, FC } from "react";
 import Placeholder from "../../../Placeholder";
 
-const Cell: FC = () => {
-  return <Placeholder className="border" />;
+type Props = Pick<ComponentProps<typeof Placeholder>, "x" | "y">;
+
+const Cell: FC<Props> = ({ x, y }) => {
+  return <Placeholder x={x} y={y} isStatic className="border" />;
 };
 
 export default Cell;

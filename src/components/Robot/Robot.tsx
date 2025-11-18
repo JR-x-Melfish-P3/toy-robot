@@ -1,24 +1,16 @@
 import { Bot } from "lucide-react";
-import { type FC } from "react";
+import { type ComponentProps, type FC } from "react";
 import Placeholder from "../Placeholder";
 
-type Facing = "NORTH" | "EAST" | "SOUTH" | "WEST";
-
-interface Props {
-  x: number;
-  y: number;
-  facing: Facing;
-}
-
-const FACING = ["NORTH", "EAST", "SOUTH", "WEST"] as const;
+type Props = Pick<ComponentProps<typeof Placeholder>, "x" | "y" | "facing">;
 
 const Robot: FC<Props> = ({ x, y, facing }) => {
   return (
     <Placeholder
       className="flex justify-center items-center"
-      style={{
-        transform: `rotate(${FACING.indexOf(facing) * 90}deg)`,
-      }}
+      x={x}
+      y={y}
+      facing={facing}
     >
       <Bot />
     </Placeholder>

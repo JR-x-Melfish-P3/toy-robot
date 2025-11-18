@@ -1,14 +1,34 @@
 import type { ComponentProps, FC } from "react";
-import { twMerge } from "tailwind-merge";
 
-const Placeholder: FC<ComponentProps<"div">> = ({
+interface Props extends ComponentProps<"div"> {
+  x: number;
+  y: number;
+  facing?: number;
+  isStatic?: boolean;
+}
+
+const SIZE = 50;
+
+const Placeholder: FC<Props> = ({
   children,
-  className,
+  x,
+  y,
+  facing = 0,
+  isStatic = false,
   ...rest
 }) => (
-  <div className={twMerge(className, "size-[50px]")} {...rest}>
+  <div
+    {...rest}
+    style={{
+      height: `${SIZE}px`,
+      width: `${SIZE}px`,
+      transform: `rotate(${facing * 90}deg)`,
+      position: isStatic ? "static" : "absolute",
+      left: `${x * SIZE}px`,
+      top: `${y * SIZE}px`,
+    }}
+  >
     {children}
   </div>
 );
-
 export default Placeholder;
