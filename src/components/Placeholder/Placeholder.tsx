@@ -10,7 +10,6 @@ interface Props extends ComponentProps<"div"> {
 const SIZE = 50;
 
 const Placeholder: FC<Props> = ({
-  children,
   x,
   y,
   facing = 0,
@@ -27,8 +26,6 @@ const Placeholder: FC<Props> = ({
       left: `${x * SIZE}px`,
       top: `${y * SIZE}px`,
     }}
-  >
-    {children}
-  </div>
+  />
 );
 export default Placeholder;
