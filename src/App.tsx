@@ -58,7 +58,6 @@ const App: FC = () => {
                 const deltaY = [-1, 0, 1, 0][facing];
 
                 setX((previousX) => minmax(previousX + deltaX, 0, COLS - 1));
-
                 setY((previousY) => minmax(previousY + deltaY, 0, ROWS - 1));
               }}
             >
