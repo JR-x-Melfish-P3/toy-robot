@@ -34,7 +34,9 @@ const App: FC = () => {
           <div>
             <Button
               onClick={() => {
-                setFacing((previousFacing) => previousFacing - 1);
+                setFacing(
+                  (previousFacing) => (((previousFacing - 1) % 4) + 4) % 4
+                );
               }}
             >
               Left
@@ -43,7 +45,7 @@ const App: FC = () => {
           <div>
             <Button
               onClick={() => {
-                setFacing((previousFacing) => previousFacing + 1);
+                setFacing((previousFacing) => (previousFacing + 1) % 4);
               }}
             >
               Right
@@ -52,9 +54,8 @@ const App: FC = () => {
           <div>
             <Button
               onClick={() => {
-                const index = (facing + 4) % 4;
-                const deltaX = [0, 1, 0, -1][index];
-                const deltaY = [-1, 0, 1, 0][index];
+                const deltaX = [0, 1, 0, -1][facing];
+                const deltaY = [-1, 0, 1, 0][facing];
 
                 setX((previousX) => minmax(previousX + deltaX, 0, COLS - 1));
 
