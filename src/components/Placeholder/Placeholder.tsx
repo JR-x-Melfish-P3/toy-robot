@@ -7,7 +7,7 @@ interface Props extends ComponentProps<"div"> {
   isStatic?: boolean;
 }
 
-const SIZE = 50;
+export const SIZE = 50;
 
 const Placeholder: FC<Props> = ({
   x,
@@ -18,6 +18,9 @@ const Placeholder: FC<Props> = ({
 }) => (
   <div
     {...rest}
+    role="region"
+    aria-label="Placeholder"
+    aria-description={`X: ${x}, Y: ${y}, Facing: ${facing}`}
     style={{
       height: `${SIZE}px`,
       width: `${SIZE}px`,
