@@ -1,5 +1,5 @@
 import { useState } from "react";
-import minmax from "../../utils/minmax";
+import minmax from "./utils/minmax";
 import turn from "./utils/turn";
 
 const useGame = (
@@ -19,11 +19,11 @@ const useGame = (
   };
 
   const left = () => {
-    setFacing((previousFacing) => turn(3, previousFacing));
+    setFacing((previousFacing) => turn("left", previousFacing));
   };
 
   const right = () => {
-    setFacing((previousFacing) => turn(1, previousFacing));
+    setFacing((previousFacing) => turn("right", previousFacing));
   };
 
   const newGame = () => {
