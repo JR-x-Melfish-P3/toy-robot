@@ -6,14 +6,16 @@ type Props = Pick<ComponentProps<typeof Placeholder>, "x" | "y" | "facing">;
 
 const Robot: FC<Props> = ({ x, y, facing }) => {
   return (
-    <Placeholder
-      className="flex justify-center items-center"
-      x={x}
-      y={y}
-      facing={facing}
-    >
-      <Bot />
-    </Placeholder>
+    <div role="region" aria-label="Robot">
+      <Placeholder
+        className="flex justify-center items-center"
+        x={x}
+        y={y}
+        facing={facing}
+      >
+        <Bot role="img" aria-label="Robot" />
+      </Placeholder>
+    </div>
   );
 };
 
