@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import type { ZodError } from "zod";
+import ErrorMessage from "../ErrorMessage";
 
 interface Props {
   name: string;
@@ -13,11 +14,7 @@ const ZodErrorMessage: FC<Props> = ({ name, error }) => {
     return null;
   }
 
-  return (
-    <div className="text-sm text-red-500" role="alert">
-      {errorMessage}
-    </div>
-  );
+  return <ErrorMessage>{errorMessage}</ErrorMessage>;
 };
 
 export default ZodErrorMessage;
