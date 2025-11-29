@@ -13,11 +13,7 @@ const ZodErrorMessage: FC<Props> = ({ name, error }) => {
     return null;
   }
 
-  return (
-    <div className="text-sm text-red-500" role="alert">
-      {errorMessage}
-    </div>
-  );
+  return <div className="text-sm text-red-500">{errorMessage}</div>;
 };
 
 export default ZodErrorMessage;
