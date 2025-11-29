@@ -5,7 +5,11 @@ import { AuthenticationContext } from "../AuthenticationProvider";
 
 const Authentication: FC = () => {
   const [type, setType] = useState<"sign-up" | "sign-in">("sign-in");
-  const { setAuthToken } = useContext(AuthenticationContext);
+  const { setAuthToken, isAuthenticated } = useContext(AuthenticationContext);
+
+  if (isAuthenticated) {
+    return null;
+  }
 
   return (
     <>
